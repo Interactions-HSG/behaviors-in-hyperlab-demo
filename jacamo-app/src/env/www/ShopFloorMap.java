@@ -107,7 +107,7 @@ public class ShopFloorMap extends Artifact{
 		for (Object obj : args){
 			message += (String.valueOf(obj)) + " ";
 		}
-		System.out.println("loggin message to GUI: origin=" + origin + " message=" + message);
+		System.out.println("logging message to GUI: origin=" + origin + " message=" + message);
 		this.ws.sendMessage("{\"terminal\": {\"origin\":\"" + origin + "\", \"message\": \"" + message + "\"}}");
 	}
 
