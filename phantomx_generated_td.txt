@@ -1,0 +1,42 @@
+<http://localhost:8080/artifacts/templates/PhantomxRobotArm> a <http://w3id.org/eve#Artifact>,
+    <http://www.w3.org/ns/td#Thing>;
+  <http://w3id.org/eve#a> <http://w3id.org/eve#ArtifactTemplate>;
+  <http://www.w3.org/ns/td#base> <http://iotschema.org/protocol/http//192.168.2.50/>;
+  <http://www.w3.org/ns/td#interaction> [
+      <http://iotschema.org/protocol/http//www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/td#Action>;
+      <http://www.w3.org/ns/td#form> [
+          <http://w3id.org/eve#path> "https://api.interactions.ics.unisg.ch/leubot/gripper";
+          <http://www.w3.org/ns/td#mediaType> "application/json";
+          <http://www.w3.org/ns/td#rel> "invokeAction";
+          <htv:methodName> "PUT"
+        ];
+      <http://www.w3.org/ns/td#inputSchema> [
+          <http://www.w3.org/ns/td#field> [
+              <http://www.w3.org/ns/td#name> "value";
+              <http://www.w3.org/ns/td#schema> [
+                  <http://www.w3.org/ns/td#SchemaType> <http://www.w3.org/ns/td#Number>
+                ]
+            ];
+          <http://www.w3.org/ns/td#schemaType> <http://www.w3.org/ns/td#Object>
+        ];
+      <http://www.w3.org/ns/td#name> "gripper"
+    ], [
+      <http://iotschema.org/protocol/http//www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/td#Action>;
+      <http://www.w3.org/ns/td#form> [
+          <http://w3id.org/eve#path> "https://api.interactions.ics.unisg.ch/leubot/wrist/rotation";
+          <http://www.w3.org/ns/td#mediaType> "application/json";
+          <http://www.w3.org/ns/td#rel> "invokeAction";
+          <htv:methodName> "PUT"
+        ];
+      <http://www.w3.org/ns/td#inputSchema> [
+          <http://www.w3.org/ns/td#field> [
+              <http://www.w3.org/ns/td#name> "value";
+              <http://www.w3.org/ns/td#schema> [
+                  <http://www.w3.org/ns/td#SchemaType> <http://www.w3.org/ns/td#Number>
+                ]
+            ];
+          <http://www.w3.org/ns/td#schemaType> <http://www.w3.org/ns/td#Object>
+        ];
+      <http://www.w3.org/ns/td#name> "rotate"
+    ];
+  <http://www.w3.org/ns/td#name> "PhantomxRobotArm", "Robot3" .

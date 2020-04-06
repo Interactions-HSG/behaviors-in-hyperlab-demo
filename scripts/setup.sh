@@ -29,17 +29,23 @@ curl -i -X POST \
   -H 'content-type: text/turtle' \
   -H 'slug: robot2' \
   -d '@payload/3_robot2_payload.ttl'
-  
-  echo -e '\n\nCreating robot3 artifact...'
+
+#echo -e '\n\nCreating robot3 artifact...'
+#curl -i -X POST \
+#  http://localhost:8080/artifacts/ \
+#  -H 'content-type: text/turtle' \
+#  -H 'slug: robot3' \
+#  -d '@payload/4_robot3_payload.ttl'
+echo -e '\n\nCreating robot3 artifact from template...'
 curl -i -X POST \
-  http://localhost:8080/artifacts/ \
-  -H 'content-type: text/turtle' \
+  http://localhost:8080/artifacts/templates/ \
+  -H 'content-type: application/json'
   -H 'slug: robot3' \
-  -d '@payload/4_robot3_payload.ttl'
-  
-  echo -e '\n\nCreating manual ...'
-curl -i -X POST \
-  http://localhost:8080/manuals/ \
-  -H 'content-type: text/turtle' \
-  -H 'slug: phantomXmanual' \
-  -d '@payload/5_manual_ofRobot3_payload.ttl'
+  -d '{"artifactClass":"http://localhost:8080/artifacts/templates/PhantomxRobotArm"}'
+
+#  echo -e '\n\nCreating manual ...'
+#curl -i -X POST \
+#  http://localhost:8080/manuals/ \
+#  -H 'content-type: text/turtle' \
+#  -H 'slug: phantomXmanual' \
+#  -d '@payload/5_manual_ofRobot3_payload.ttl'
